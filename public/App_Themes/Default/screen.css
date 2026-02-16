@@ -1,0 +1,102 @@
+#slider ul, #slider li, #slider2 ul, #slider2 li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#slider2 {
+    margin-top: 1em;
+}
+
+    #slider li, #slider2 li {
+        width: 984px;
+        height: 270px;
+        overflow: hidden;
+    }
+
+#prevBtn, #nextBtn, #slider1next, #slider1prev {
+    display: block;
+    width: 30px;
+    height: 77px;
+    position: absolute;
+    left: -30px;
+    top: 71px;
+    z-index: 1000;
+}
+
+#nextBtn, #slider1next {
+    left: 696px;
+}
+
+    #prevBtn a, #nextBtn a, #slider1next a, #slider1prev a {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 77px;
+    }
+
+    #nextBtn a, #slider li .teaser {
+        clear: right;
+        float: left;
+        font-family: Helvetica,Arial,Verdana;
+        color: #000;
+        height: 270px;
+        width: 436px;
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+#slider li img {
+    float: right;
+}
+
+ol#controls {
+    padding: 0;
+    height: 28px;
+    position: relative;
+    z-index: 9999;
+    margin-top: -35px;
+    margin-right: 0;
+    margin-left: 0;
+    color: #FFF;
+}
+
+    ol#controls li {
+        margin: 0 10px 0 0;
+        padding: 0;
+        float: left;
+        list-style: none;
+        height: 28px;
+        line-height: 28px;
+        font-family: Helvetica,Arial,Verdana;
+        font-size: 14px;
+        background-color: #FF8300;
+        color: #FFF;
+    }
+
+        ol#controls li a {
+            font-family: Helvetica,Arial,Verdana;
+            color: #FFF;
+            font-size: 14px;
+            float: left;
+            height: 28px;
+            line-height: 28px;
+            color: #FFF;
+            padding: 0 10px;
+            text-decoration: none;
+            background-image: linear-gradient(bottom,rgb(69,68,71) 39%,rgb(7,33,33) 68%);
+            background-image: -o-linear-gradient(bottom,rgb(69,68,71) 39%,rgb(7,33,33) 68%);
+            background-image: -moz-linear-gradient(bottom,rgb(69,68,71) 39%,rgb(7,33,33) 68%);
+            background-image: -webkit-linear-gradient(bottom,rgb(69,68,71) 39%,rgb(7,33,33) 68%);
+            background-image: -ms-linear-gradient(bottom,rgb(69,68,71) 39%,rgb(7,33,33) 68%);
+            background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.39,rgb(69,68,71)),color-stop(0.68,rgb(7,33,33)));
+        }
+
+        ol#controls li.current a {
+            color: #fff;
+            background: #FF8300;
+        }
+
+        ol#controls li a:focus, #prevBtn a:focus, #nextBtn a:focus {
+            outline: none;
+        }

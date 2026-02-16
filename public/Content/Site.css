@@ -1,0 +1,393 @@
+﻿
+/*Compat BS4*/
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+/*.alert-info {
+    background-color: #76a4b8;
+    color:white;
+}*/
+
+
+/* /Compat BS4*/
+
+.posiciona {
+    outline-style: none;
+    border-style: none;
+    width: 0;
+    height: 0;
+    margin-top: 50px;
+}
+
+
+ 
+
+ 
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 982px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+ 
+
+
+.containerAU {
+    max-width: 550px;
+    height: 100%;
+}
+
+.container{
+    background-color: transparent;
+    border-radius:6px;
+
+}
+
+/*.bg-warning {
+    background-color: #EAAB00*/ /*'#ffbd59 !important;*/
+/*}
+ 
+
+.card-header .form-group {
+    margin-bottom: 0
+}*/
+
+.drop-shadow {
+    -webkit-box-shadow: 0 0 15px 5px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .3);
+}
+
+/*
+footer .card-body {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #2b4c75 !important;
+    color: #1b5a6e !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+}
+
+    footer .card-body p {
+        margin-bottom: 2px;
+        line-height: 8pt;
+    }
+*/
+footer .container {
+    background-color:transparent;
+}
+
+.activo {
+    background-color: #e9e8dd !important;
+    border: solid 1px #ccc;
+}
+
+
+
+.form-control-plaintext {
+    color: #2b4c75;
+    font-style:normal;
+    font-weight:650;
+}
+
+ .form-group{
+     margin-bottom:0.6rem;
+ }
+
+
+.checkboxlist-inline, .radiobuttonlist-inline {
+    margin-top: 7px;
+}
+
+.bg-primary {
+    background-color: #00537e !important;
+}
+
+/*.alert-primary {
+    background-color: #2b4c75 !important;
+    color: white;
+}*/
+
+.group-bg {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+
+.checkboxlist-inline tbody tr td label, .radiobuttonlist-inline tbody tr td label {
+    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 20px;
+    display: inline;
+}
+
+.form-check label {
+    margin-bottom: 0;
+    margin-left: 3px;
+    margin-right: 20px;
+    display: inline;
+}
+
+
+/* checkbox */
+
+input[type="checkbox"]:checked + label {
+    font-weight: bold;
+}
+
+input[type="checkbox"]:disabled:checked + label {
+    color: #000;
+    position: relative;
+    left: -16px;
+}
+
+    input[type="checkbox"]:disabled:checked + label::before {
+        content: url(../images/checkmark_16.html);
+        position: relative;
+        left: -2px;
+    }
+
+input[type="checkbox"]:disabled:checked {
+    opacity: 0;
+}
+
+
+
+
+/**/
+.wrap {
+    white-space: normal;
+}
+
+  
+
+@media (min-width: 768px) {
+    .row .col-form-label {
+        text-align: right;
+    } 
+}
+
+@media (max-width: 992px) {
+    .card-body {
+        padding: 0.55rem !important;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .form-group {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .form-group {
+        margin-bottom: 0;
+    }
+
+        .form-group .form-control {
+            margin-bottom: 5px;
+        }
+}
+
+ 
+
+
+
+#menuCRUD {
+    margin-bottom: -5px;
+    margin-top: -5px;
+}
+
+
+/*Tooltip*/
+
+.bs-tooltip-bottom .arrow, .bs-tooltip-auto[x-placement^="bottom"] .arrow {
+    top: 0;
+}
+
+    .bs-tooltip-bottom .arrow::before, .bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+        bottom: 0;
+        border-width: 2px 3px 4px 5px; /*0 0.4rem 0.4rem;*/
+        border-bottom-color: #ffd800;
+    }
+
+
+.tooltip-inner {
+    max-width: 300px;
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border: 1px solid #0c5460;
+}
+ 
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="select"] {
+    max-width: 400px;
+}
+
+input[type="email"] {
+    max-width: 800px;
+}
+ 
+
+input[type="date"] {
+    max-width: 180px;
+    min-width: 150px;
+}
+
+input[type="datetime"] {
+    max-width: 195px;
+}
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+
+ 
+.sticky {
+    position: fixed !important;
+    top: 34px !important;
+    z-index: 9999;
+}
+
+    .sticky #menuCRUD {
+        float: right;
+        border: 1px solid rgba(0, 0, 0, 0.75);
+        border-radius: 0.25rem;
+        background-color: #2b4c75 !important;
+        margin: 0;
+        padding-left: 4px;
+    }
+
+.stickyMessage {
+    float: right;
+    position: fixed !important;
+    top: 115px !important;
+    z-index: 9999;
+    color: #FF0000;
+}
+
+#MainMessage a:link {
+    color: white;
+}
+
+/* visited link */
+#MainMessage a:visited {
+    color: white;
+}
+
+/* mouse over link */
+#MainMessage a:hover {
+    color: whitesmoke;
+}
+
+/* selected link */
+#MainMessage a:active {
+    color: white;
+}
+
+/*Reposiciona 3ref por causa do header fixo*/
+a.anchor {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
+
+
+
+/* Button  #007bff;#0069d9 ffbd59*/
+.btn-primary {
+    color: #fff;
+    background-color: #2b4c75; /* #1b426e;*/
+    border-color: #D9D9D9;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #1b5a6e;
+        border-color: #adadad;
+    }
+
+    .btn-primary:focus, .btn-primary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+     
+
+.suprimir{}
+@media (max-width: 768px) {
+    .suprimir {
+        display: none!important;
+    } 
+}
+     
+/*MODAL popup*/
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 750px;
+    }
+}
+

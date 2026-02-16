@@ -1,0 +1,227 @@
+﻿
+/* News Summaries */
+
+.newsarticle {
+    width: 548px;
+}
+
+ol.newssummarylist {
+    padding: 0;
+}
+
+    ol.newssummarylist li {
+    padding: 0;
+}
+
+.newssummarylist,  .newsheadline , .newsbyline, .newsdate, .newsbody {
+	font-size: 10pt;
+	font-family: 'Times New Roman' , Times, serif;
+}
+
+.newssummarylist .headline, .newsheadline {
+	padding-top: 4px;
+	/*margin-top: 8px;*/
+	font-size: 16pt;
+	font-weight: bold;
+	color: #0099FF;
+}
+
+.newssummarylist .headline {
+	font-size: 12pt;
+}
+
+
+.newssummarylist .dateline, .newsdate {
+	font-size: 10pt;
+	margin-bottom: 4px;
+}
+
+.newsbyline {
+	font-size: 10pt;
+}
+
+.newsbody {
+	font-size: 12pt;
+    width: 544px;
+}
+
+.newscontent {
+}
+
+.newssummarylist .newsimage {
+	float: left;
+	margin-right: 4px;
+}
+
+.newssummarylist .newstext {
+	height: 60px;
+	overflow: hidden;
+	padding-bottom: 4px;
+}
+
+.newsauthor {
+	font-style: italic;
+	font-size: 10pt;
+}
+
+/* News Summaries */
+
+
+.showsummarylistnumbers {
+    padding-left: 40px !important;
+}
+
+.hidesummarylistnumbers {
+    list-style-type: none;
+}
+
+/* Sidebar widgets */
+
+.side-widget-v {
+	width: 200px;
+}
+
+    .side-widget-v span, .side-widget-v label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9pt;
+}
+
+	.side-widget-v input[type=text], .side-widget-v input[type=button], .side-widget-v input[type=submit], .side-widget-v select {
+	width: 190px;
+	}
+
+.side-widget-v ul {
+    margin-top: 8px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.side-widget-v ul li {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+
+/* End Sidebar widgets */
+
+.summarylabel {
+    margin-top: 12px;
+    font-size: 18pt;
+    font-weight: bold;
+    color: #0099FF;
+}
+
+/* Resource Summary List */
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.rc-ol, .rc-li {
+    font-family: 'Segoe UI' , Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 11pt;
+}
+
+.rc-ol {
+    padding: 0 0 0 20px;
+}
+
+.rc-li {
+    margin-top: 8px;
+}
+
+.rc-title  {
+	font-size: 11pt;
+}
+
+    .rc-title a {
+    color: #000099;
+}
+
+        .rc-title a:visited {
+    color: #0099CC;
+}
+
+.rc-description, .rc-pub, .rc-date, a.rc-dl {
+    font-size: 9pt;
+}
+
+a.downloadlink {
+    /*border: 1px solid silver;*/
+    background-repeat: no-repeat;
+    background-position: 3px 2px;
+    padding: 2px 4px 2px 22px;
+    height: 24px;
+    display: block;  
+    font-size: 9pt;
+}
+
+/* End Resource Summary List */
+
+.webpartcontent {
+    border-width: 1px;
+    border-color: #DDDDDD;
+    padding: 8px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+}
+
+a.audio, a.video, a.image {
+    display: block;
+    width: 120px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-left: 70px;
+    vertical-align: middle;
+}
+
+a.audio {
+	background-image: url('../images/icons64/audio.png');
+}
+
+a.video {
+    background-image: url('../images/icons64/video.png');
+}
+
+a.image {
+	background-image: url('../images/icons64/image.png');
+}
+
+table.mediaselectors td {
+    padding-right: 40px;
+}
+
+table.mediaselectors td a {
+    text-decoration: none;
+    color:#000;
+}
+
+/* Media Gallery */
+
+
+.galleria-stage {
+    bottom: 90px;
+}
+
+.galleria-info {
+    width: 100%;
+    bottom: 50px;
+    top: auto;
+    left: 0;
+}
+
+.galleria-info-text {
+    background-color: #C0C0C0;
+    padding: 6px;
+}
+
+.galleria-info-title {
+    color: #000;
+    margin-top: 7px;
+}

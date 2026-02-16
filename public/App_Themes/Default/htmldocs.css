@@ -1,0 +1,35 @@
+﻿div.htmldoc {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+}
+
+    div.htmldoc .table-caption {
+        font-weight: bold;
+    }
+
+    div.htmldoc .table-heading {
+        font-weight: bold;
+        background-color: #00B0F0;
+    }
+
+    div.htmldoc .table-content {
+    }
+
+    div.htmldoc .table-contact-info {
+        font-style: italic;
+    }
+
+    div.htmldoc .table-footer {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+
+img.align-right {
+    float: right;
+    margin: 0 0 15px 15px;
+}
+
+img.align-left {
+    float: left;
+    margin: 0 15px 15px 0;
+}
