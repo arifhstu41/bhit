@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - development
+      - main
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files - Development
+      if: GitHub.ref == 'refs/heads/development'
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_HOST_DEV }}
+        username: ${{ secrets.FTP_USER_DEV }}
+        password: ${{ secrets.FTP_PASSWORD_DEV }}
+
+    - name: 📂 Sync files - Feature Branch
+      if: GitHub.ref == 'refs/heads/main'
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}  
