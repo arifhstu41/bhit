@@ -225,7 +225,7 @@ function __doPostBack(eventTarget, eventArgument) {
 </div>
         <script type="text/javascript">
 //<![CDATA[
-Sys.WebForms.PageRequestManager._initialize('ctl00$CommonScripts$sm', 'ctl01', [], [], [], 90, 'ctl00');
+Sys.WebForms.PageRequestManager._initialize('ctl00$CommonScripts$sm', 'ctl01', [], [], [], 90, 'ctl00'); 
 //]]>
 </script>
 
