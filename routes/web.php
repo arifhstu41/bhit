@@ -150,3 +150,8 @@ Route::post('/user/profile', function (\Illuminate\Http\Request $request) {
 Route::post('/user-documents', [\App\Http\Controllers\UserDocumentController::class, 'store'])->middleware('auth');
 Route::get('/user-documents', [\App\Http\Controllers\UserDocumentController::class, 'index'])->middleware('auth');
 Route::get('/user-documents/{id}/download', [\App\Http\Controllers\UserDocumentController::class, 'download'])->middleware('auth');
+
+Route::get('/run-migration', function() {
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    return 'Migration completed';
+});
