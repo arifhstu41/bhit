@@ -146,3 +146,7 @@ Route::post('/user/profile', function (\Illuminate\Http\Request $request) {
 
     return redirect('/user/profile')->with('success', 'Profile updated successfully!');
 })->middleware('auth');
+
+Route::post('/user-documents', [\App\Http\Controllers\UserDocumentController::class, 'store'])->middleware('auth');
+Route::get('/user-documents', [\App\Http\Controllers\UserDocumentController::class, 'index'])->middleware('auth');
+Route::get('/user-documents/{id}/download', [\App\Http\Controllers\UserDocumentController::class, 'download'])->middleware('auth');

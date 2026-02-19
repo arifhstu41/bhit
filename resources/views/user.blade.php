@@ -373,19 +373,19 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ctl09', 'ctl01', ['tctl00$Mai
 
     <div class="link-steps clearfix">
         <div id="MainContent_ucNavBar_div1" class="step NavBarSelected">
-            <input type="submit" name="ctl00$MainContent$ucNavBar$btn1" value="1. Temporary Protection Regime" id="MainContent_ucNavBar_btn1" class="btn btn-lg btn-sm wrap " />
+            <input type="button" name="ctl00$MainContent$ucNavBar$btn1" value="1. Temporary Protection Regime" id="MainContent_ucNavBar_btn1" class="btn btn-lg btn-sm wrap " onclick="showTab(1)" />
         </div>
         <div id="MainContent_ucNavBar_div2" class="step   ">
-            <input type="submit" name="ctl00$MainContent$ucNavBar$btn2" value="2. Documents" id="MainContent_ucNavBar_btn2" class=" btn  btn-sm btn-lg  wrap " />
+            <input type="button" name="ctl00$MainContent$ucNavBar$btn2" value="2. Documents" id="MainContent_ucNavBar_btn2" class=" btn  btn-sm btn-lg  wrap " onclick="showTab(2)" />
         </div>
         <div id="MainContent_ucNavBar_div3" class="step    ">
-            <input type="submit" name="ctl00$MainContent$ucNavBar$btn3" value="3. Family Members" id="MainContent_ucNavBar_btn3" class="  btn  wrap" />
+            <input type="button" name="ctl00$MainContent$ucNavBar$btn3" value="3. Family Members" id="MainContent_ucNavBar_btn3" class="  btn  wrap" onclick="showTab(3)" />
         </div>
         <div id="MainContent_ucNavBar_div4" class="step    ">
-            <input type="submit" name="ctl00$MainContent$ucNavBar$bth4" value="4. Submit Application" id="MainContent_ucNavBar_bth4" class="  btn  wrap" />
+            <input type="button" name="ctl00$MainContent$ucNavBar$bth4" value="4. Submit Application" id="MainContent_ucNavBar_bth4" class="  btn  wrap" onclick="showTab(4)" />
         </div>
          <div id="MainContent_ucNavBar_div5" class="step ">
-            <input type="submit" name="ctl00$MainContent$ucNavBar$btn5" value="5. Certificates" id="MainContent_ucNavBar_btn5" class="  btn  wrap" />
+            <input type="button" name="ctl00$MainContent$ucNavBar$btn5" value="5. Certificates" id="MainContent_ucNavBar_btn5" class="  btn  wrap" onclick="showTab(5)" />
         </div>
     </div>
 </div>
@@ -399,6 +399,7 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$ctl09', 'ctl01', ['tctl00$Mai
         <div id="MainContent_ucIdentificacao_pnl" onkeypress="javascript:return WebForm_FireDefaultButton(event, &#39;MainContent_ucIdentificacao_btnActualizarPedido&#39;)">
 			
             <div id="MainContent_ucIdentificacao_divDados" class="card ">
+                <div id="tab-content-1">
                 <div class="card-header bg-primary text-light">
 
 
@@ -1162,6 +1163,110 @@ Specialists in intellectual and scientific activities</option>
                         
                     </div>
                 </div>
+                </div>
+                
+                <div id="tab-content-2" style="display:none;">
+                    <div class="card-header bg-primary text-light">
+                        <div class="float-start">
+                            <span>Process {{ auth()->user()->id }}/B{{ date('Y') }}{{ str_pad(auth()->user()->id, 6, '0', STR_PAD_LEFT) }}</span>
+                        </div>
+                        <div class="text-center">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-1">
+                            <span class="col-lg-2 col-md-4 col-form-label">Surname</span>
+                            <div class="col-lg-4 col-md-8">
+                                <span class="form-control-plaintext">{{ $profile->last_name ?? '' }}</span>
+                            </div>
+                            <span class="col-lg-2 col-md-4 col-form-label">Name</span>
+                            <div class="col-lg-4 col-md-8">
+                                <span class="form-control-plaintext">{{ $profile->first_name ?? '' }}</span>
+                            </div>
+                            <span class="col-lg-2 col-md-4 col-form-label">Date of birth</span>
+                            <div class="col-lg-2 col-md-8">
+                                <span class="form-control-plaintext">{{ $profile->date_of_birth ?? '' }}</span>
+                            </div>
+                            <span class="col-lg-1 col-md-4 col-form-label">Sex</span>
+                            <div class="col-lg-1 col-md-8">
+                                <span class="form-control-plaintext">{{ $profile->sex == 'M' ? 'Male' : ($profile->sex == 'F' ? 'Female' : 'Unknown') }}</span>
+                            </div>
+                            <span class="col-lg-2 col-md-4 col-form-label">Place of Birth</span>
+                            <div class="col-lg-4 col-md-8">
+                                <span class="form-control-plaintext">{{ $profile->place_of_birth ?? '' }}</span>
+                            </div>
+                            <span class="col-lg-2 col-md-4 col-form-label">Situation</span>
+                            <div class="col-lg-4 col-md-8">
+                                <span class="form-control-plaintext">Started</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-3">
+                        <div class="card-header bg-primary text-light">Documents associated with the process</div>
+                        <div class="card-body">
+                            <span style="display:inline-block;color:Gray;background-color:Yellow;font-size:Medium;width:100%;padding:4px;box-sizing:border-box;border-radius:4px;">Document associated with the process</span>
+                            <table class="table table-responsive-md table-bordered table-striped mt-3">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width:200px;">View</th>
+                                        <th>Description</th>
+                                        <th class="text-center">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="documentsTable">
+                                    <tr>
+                                        <td class="text-center">📄</td>
+                                        <td>Passport</td>
+                                        <td class="text-center">{{ date('d/m/Y H:i') }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="card mt-3">
+                                <div class="card-header bg-secondary text-light">
+                                    <div class="float-start"><h6>Document upload</h6></div>
+                                    <span class="badge bg-warning rounded-pill float-end">PDF | JPG</span>
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert alert-info">Upload your travel document (Passport; Ukrainian Residence Permit; Safe-conduct pass; or other).</div>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4">
+                                            <label class="col-form-label">Description</label>
+                                            <input type="text" id="docDescription" class="form-control" placeholder="Document description" />
+                                        </div>
+                                        <div class="col-lg-8 col-md-8">
+                                            <label class="col-form-label">File</label>
+                                            <div class="input-group">
+                                                <input type="file" id="docFile" class="form-control" accept=".pdf,.jpg,.jpeg" />
+                                                <button type="button" id="uploadBtn" class="btn btn-primary">Upload</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab-content-3" style="display:none;">
+                    <div class="card-body">
+                        <div class="alert alert-info">Family Members section</div>
+                    </div>
+                </div>
+                
+                <div id="tab-content-4" style="display:none;">
+                    <div class="card-body">
+                        <div class="alert alert-info">Submit Application section</div>
+                    </div>
+                </div>
+                
+                <div id="tab-content-5" style="display:none;">
+                    <div class="card-body">
+                        <div class="alert alert-info">Certificates section</div>
+                    </div>
+                </div>
 
             </div>
         
@@ -1206,6 +1311,81 @@ Specialists in intellectual and scientific activities</option>
 		</div>
         <script type="text/javascript">
             $('#txtDataNascimento').inputmask('99/99/9999');
+            
+            function showTab(tabNumber) {
+                // Remove active class from all tabs
+                $('.link-steps .step').removeClass('NavBarSelected');
+                
+                // Add active class to clicked tab
+                $('#MainContent_ucNavBar_div' + tabNumber).addClass('NavBarSelected');
+                
+                // Hide all tab content
+                $('#tab-content-1, #tab-content-2, #tab-content-3, #tab-content-4, #tab-content-5').hide();
+                
+                // Show selected tab content
+                $('#tab-content-' + tabNumber).show();
+            }
+            
+            $(document).ready(function() {
+                loadDocuments();
+
+                $('#uploadBtn').click(function() {
+                    var description = $('#docDescription').val().trim();
+                    var file = $('#docFile')[0].files[0];
+
+                    if (!description) {
+                        alert('Please enter a description');
+                        return;
+                    }
+
+                    if (!file) {
+                        alert('Please select a file');
+                        return;
+                    }
+
+                    var ext = file.name.split('.').pop().toLowerCase();
+                    if (ext !== 'pdf' && ext !== 'jpg' && ext !== 'jpeg') {
+                        alert('Only PDF, JPG, or JPEG files are allowed');
+                        return;
+                    }
+
+                    var formData = new FormData();
+                    formData.append('description', description);
+                    formData.append('file', file);
+                    formData.append('_token', '{{ csrf_token() }}');
+
+                    $.ajax({
+                        url: '/user-documents',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function(response) {
+                            alert('Document uploaded successfully');
+                            $('#docDescription').val('');
+                            $('#docFile').val('');
+                            loadDocuments();
+                        },
+                        error: function() {
+                            alert('Upload failed');
+                        }
+                    });
+                });
+
+                function loadDocuments() {
+                    $.ajax({
+                        url: '/user-documents',
+                        type: 'GET',
+                        success: function(documents) {
+                            var html = '';
+                            $.each(documents, function(i, doc) {
+                                html += '<tr><td class="text-center"><a href="/user-documents/' + doc.id + '/download" target="_blank" title="' + doc.file_name + '">📄 ' + doc.file_name + '</a></td><td>' + doc.description + '</td><td class="text-center">' + doc.date + '</td></tr>';
+                            });
+                            $('#documentsTable').html(html);
+                        }
+                    });
+                }
+            });
         </script>
 
 
