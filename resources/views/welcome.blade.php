@@ -241,8 +241,12 @@ Sys.WebForms.PageRequestManager._initialize('ctl00$CommonScripts$sm', 'ctl01', [
 <li class="orange"><a href="/citizens">Citizens / Residents</a></li>
 <li class="pink"><a href="/non-residents">Non-Residents</a></li>
 <li class="green"><a href="/businesses">Businesses</a></li>
-<li class="blue"><a href="/employees">Government Employees</a></li>
+<li class="blue"><a href="/employees"> Employees</a></li>
+@if(auth()->check())
+<li class="blue"><a href="/home">{{ auth()->user()->email }}</a></li>
+@else
 <li class="blue"><a href="/login">Login</a></li>
+@endif
         
 <li class="searchbox"><input name="ctl00$mainMenu$SearchRequest$search" type="text" id="mainMenu_SearchRequest_search" class="inquiry" placeholder="Search" /></li>
 <li class="searchbtn"><input type="submit" name="ctl00$mainMenu$SearchRequest$cmdSearch" value="SEARCH" id="mainMenu_SearchRequest_cmdSearch" class="btn-submit" /></li>

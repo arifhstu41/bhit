@@ -112,7 +112,7 @@ function __doPostBack(eventTarget, eventArgument) {
             <div class="container">
                 <div class="row py-2 ">
                     <div class="col-4">
-                        <a href="/Default.aspx" class="float-start">
+                        <a href="/" class="float-start">
                             <img class="img-fluid " src='{{ asset('images/logo.png') }}' /></a>
                     </div>
 
@@ -1190,7 +1190,7 @@ Specialists in intellectual and scientific activities</option>
                             </div>
                             <span class="col-lg-1 col-md-4 col-form-label">Sex</span>
                             <div class="col-lg-1 col-md-8">
-                                <span class="form-control-plaintext">{{ $profile->sex == 'M' ? 'Male' : ($profile->sex == 'F' ? 'Female' : 'Unknown') }}</span>
+                                <span class="form-control-plaintext">{{ ($profile->sex ?? '') == 'M' ? 'Male' : (($profile->sex ?? '') == 'F' ? 'Female' : 'Unknown') }}</span>
                             </div>
                             <span class="col-lg-2 col-md-4 col-form-label">Place of Birth</span>
                             <div class="col-lg-4 col-md-8">
@@ -1313,6 +1313,15 @@ Specialists in intellectual and scientific activities</option>
             $('#txtDataNascimento').inputmask('99/99/9999');
             
             function showTab(tabNumber) {
+                // Check if trying to access Documents tab (tab 2)
+                if (tabNumber === 2) {
+                    var hasProfile = {{ $profile ? 'true' : 'false' }};
+                    if (!hasProfile) {
+                        alert('Please complete "1. Temporary Protection Regime" first before accessing Documents.');
+                        return;
+                    }
+                }
+                
                 // Remove active class from all tabs
                 $('.link-steps .step').removeClass('NavBarSelected');
                 
