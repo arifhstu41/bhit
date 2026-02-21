@@ -11,7 +11,7 @@ Route::get('/login', function () {
         return redirect('/home');
     }
     return view('login');
-});
+})->name('login');
 
 Route::post('/login', function (\Illuminate\Http\Request $request) {
     $request->validate([
