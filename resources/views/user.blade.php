@@ -4,9 +4,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <html>
-<head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
-	SEF for Ukraine
-</title><link href="{{ asset('Content/fontawesome.min.css') }}" rel="stylesheet" /><link href="{{ asset('Content/myFooter.css') }}" rel="stylesheet" /><link href="{{ asset('Content/bootstrap.css') }}" rel="stylesheet" /><link href="{{ asset('Content/Site.css') }}" rel="stylesheet" />
+<head><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- <title>SEF for Ukraine</title> -->
+<link href="{{ asset('Content/fontawesome.min.css') }}" rel="stylesheet" /><link href="{{ asset('Content/myFooter.css') }}" rel="stylesheet" /><link href="{{ asset('Content/bootstrap.css') }}" rel="stylesheet" /><link href="{{ asset('Content/Site.css') }}" rel="stylesheet" />
     <script src="{{ asset('Scripts/jquery-3.6.0.js') }}"></script>
     <script src="{{ asset('Scripts/bootstrap.js') }}"></script>
     <script src="{{ asset('Scripts/inputmask/jquery.inputmask.js') }}"></script>
@@ -1166,7 +1166,8 @@ Specialists in intellectual and scientific activities</option>
                 </div>
                 
                 <div id="tab-content-2" style="display:none;">
-                    <div class="card-header bg-primary text-light">
+                    <div class="card mt-3">
+                    <div class="card-header bg-primary text-light" >
                         <div class="float-start">
                             <span>Process {{ auth()->user()->id }}/B{{ date('Y') }}{{ str_pad(auth()->user()->id, 6, '0', STR_PAD_LEFT) }}</span>
                         </div>
@@ -1202,27 +1203,35 @@ Specialists in intellectual and scientific activities</option>
                             </div>
                         </div>
                     </div>
+                    </div>
                     
                     <div class="card mt-3">
-                        <div class="card-header bg-primary text-light">Documents associated with the process</div>
+                        <div class="card-header bg-primary text-light">What documents you need to upload?</div>
                         <div class="card-body">
-                            <span style="display:inline-block;color:Gray;background-color:Yellow;font-size:Medium;width:100%;padding:4px;box-sizing:border-box;border-radius:4px;">Document associated with the process</span>
-                            <table class="table table-responsive-md table-bordered table-striped mt-3">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" style="width:200px;">View</th>
-                                        <th>Description</th>
-                                        <th class="text-center">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="documentsTable">
-                                    <tr>
-                                        <td class="text-center">📄</td>
-                                        <td>Passport</td>
-                                        <td class="text-center">{{ date('d/m/Y H:i') }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <span style="display:inline-block;color:Gray;background-color:Yellow;font-size:Medium;width:100%;padding:4px;box-sizing:border-box;border-radius:4px;">
+                                You must send original documents. Photocopies are not accepted. 
+
+If you do not have your original certificates (for example, your birth certificate), you need to get an official copy. 
+
+If your documents are not in English, Creole, and French., you need to send a certified translation. 
+
+ 
+
+If you do not have your original certificates (for example, your birth certificate), you need to get an official copy. 
+
+your full birth certificate showing your parents’ details 
+
+your current passport 
+
+your father’s birth certificate 
+
+ 
+
+How your documents will be sent back 
+
+The supporting documents will be returned separately from your passport. How you get them depends on the delivery option you choose when you fill in your application.
+                            </span>
+                           
                             
                             <div class="card mt-3">
                                 <div class="card-header bg-secondary text-light">
@@ -1231,6 +1240,23 @@ Specialists in intellectual and scientific activities</option>
                                 </div>
                                 <div class="card-body">
                                     <div class="alert alert-info">Upload your travel document (Passport; Ukrainian Residence Permit; Safe-conduct pass; or other).</div>
+
+                                     <table class="table table-responsive-md table-bordered table-striped mt-3">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" style="width:200px;">View</th>
+                                                <th>Description</th>
+                                                <th class="text-center">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="documentsTable">
+                                            <tr>
+                                                <td class="text-center">📄</td>
+                                                <td>Passport</td>
+                                                <td class="text-center">{{ date('d/m/Y H:i') }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <label class="col-form-label">Description</label>
