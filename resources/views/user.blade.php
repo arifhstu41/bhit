@@ -1239,7 +1239,13 @@ The supporting documents will be returned separately from your passport. How you
                                     <span class="badge bg-warning rounded-pill float-end">PDF | JPG</span>
                                 </div>
                                 <div class="card-body">
-                                    <div class="alert alert-info">Upload your travel document (Passport; Ukrainian Residence Permit; Safe-conduct pass; or other).</div>
+                                    <div class="alert alert-info">Upload your document (your full birth certificate showing your parents’ details, your current passport, a criminal record certificate  If you’ve lived in more than one country 
+
+You might need to provide a certificate from each country you’ve lived in, depending on your age and how long you stayed in each country. 
+
+If you’re under 28, you’ll need a certificate from any country you’ve stayed in for a total of 12 months or more since you turned 18. 
+
+If you’re 28 or over, you’ll need a certificate from any country you’ve stayed in over the last 10 years.).</div>
 
                                      <table class="table table-responsive-md table-bordered table-striped mt-3">
                                         <thead>
